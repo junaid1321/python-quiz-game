@@ -5,141 +5,123 @@ import sys
 import time
 
 #Part 1: Deciding how to store Questions
+#Added 3 question banks to the game
+#Each Question bank consists of 20 questions each 
 quiz_data = [
-    #Q1
     {
         "Q":"How many continents are there on Earth?",
         "Options":["A) 5", "B) 6", "C) 7", "D) 8"],
         "Answer":"C"
     },
 
-    #Q2
     {
         "Q":"What is the capital of France?",
         "Options":["A) London", "B) Berlin", "C) Madrid", "D) Paris"],
         "Answer":"D"
     },
 
-    #Q3
     {
         "Q":"Which planet is known as the Red Planet?",
         "Options":["A) Mars", "B) Saturn", "C) Jupiter", "D) Venus"],
         "Answer":"A"
     },
 
-    #Q4
     {
         "Q":"Which is the most popular sport in the world?",
         "Options":["A) Football", "B) Cricket", "C) Basketball", "D) American Football"],
         "Answer":"A"
     },
 
-    #Q5
     {
         "Q":"What is the hardest natural substance in the world?",
         "Options":["A) Gold", "B) Iron", "C) Diamond", "D) Silver"],
         "Answer":"C"
     },
 
-    #Q6
     {
         "Q":"Which gas do plants absorb from the atmosphere?",
         "Options":["A) Oxygen", "B) Nitrogen", "C) Carbon Dioxide", "D) Hydrogen"],
         "Answer":"C"
     },
 
-    #Q7
     {
         "Q": "Which element has the chemical symbol 'O'?",
         "Options": ["A) Gold", "B) Oxygen", "C) Osmium", "D) Silver"],
         "Answer": "B"
     },
 
-    #Q8
     {
         "Q": "How many bones are in the adult human body?",
         "Options": ["A) 206", "B) 208", "C) 210", "D) 204"],
         "Answer": "A"
     },
 
-    #Q9
     {
         "Q": "Which country is home to the kangaroo?",
         "Options": ["A) Brazil", "B) South Africa", "C) Australia", "D) India"],
         "Answer": "C"
     },
 
-    #Q10
     {
         "Q": "What is the largest ocean on Earth?",
         "Options": ["A) Atlantic Ocean", "B) Indian Ocean", "C) Arctic Ocean", "D) Pacific Ocean"],
         "Answer": "D"
     },
 
-    #Q11
     {
         "Q": "Who painted the Mona Lisa?",
         "Options": ["A) Vincent van Gogh", "B) Leonardo da Vinci", "C) Pablo Picasso", "D) Claude Monet"],
         "Answer": "B"
     },
 
-    #Q12
     {
         "Q": "What is the hardest natural substance on Earth?",
         "Options": ["A) Gold", "B) Iron", "C) Diamond", "D) Platinum"],
         "Answer": "C"
     },
 
-    #Q13
     {
         "Q": "Which instrument has 88 keys?",
         "Options": ["A) Violin", "B) Guitar", "C) Piano", "D) Flute"],
         "Answer": "C"
     },
 
-    #Q14
     {
         "Q": "How many sides does a hexagon have?",
         "Options": ["A) 5", "B) 6", "C) 7", "D) 8"],
         "Answer": "B"
     },
 
-    #Q15
     {
         "Q": "What is the fastest land animal in the world?",
         "Options": ["A) Lion", "B) Cheetah", "C) Gazelle", "D) Horse"],
         "Answer": "B"
     },
 
-    #Q16
     {
         "Q": "Which gas do plants absorb from the atmosphere for photosynthesis?",
         "Options": ["A) Carbon Dioxide", "B) Oxygen", "C) Nitrogen", "D) Hydrogen"],
         "Answer": "A"
     },
 
-    #Q17
     {
         "Q": "In which continent is the Sahara Desert located?",
         "Options": ["A) Asia", "B) Africa", "C) South America", "D) Australia"],
         "Answer": "B"
     },
 
-    #Q18
     {
         "Q": "What is the freezing point of water in Celsius?",
         "Options": ["A) 0°C", "B) -10°C", "C) 32°C", "D) 100°C"],
         "Answer": "A"
     },
 
-    #Q19
     {
         "Q": "Which primary color do you mix with Blue to get Green?",
         "Options": ["A) Red", "B) Yellow", "C) Purple", "D) White"],
         "Answer": "B"
     },
 
-    #Q20
     {
         "Q": "What is the smallest prime number?",
         "Options": ["A) 0", "B) 1", "C) 2", "D) 3"],
@@ -403,6 +385,9 @@ movies_quiz_data = [
     }
 ]
 
+#Part 2: This where the game is made and controlled
+#Random 6 Questions will be asked from the desired question banks
+#Added a 30 second time limit for the whole quiz to make the game more fun
 def game(score, quiz_data_option):
     start_time = time.time()
     for item in quiz_data_option:
@@ -430,7 +415,9 @@ def game(score, quiz_data_option):
     return score
 
     
-
+#Part 3: The UI and the setup of the game
+#User can choose which category they want to have a quiz for
+#There total score and number of quizzez will be tracked and displayed at the end
 def main():
     total_quizzez = 0
     total_score = 0
